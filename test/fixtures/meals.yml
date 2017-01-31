@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chef_id: 1
+  cuisine_id: 1
+  name: MyString
+  ingredients: MyString
+  suggested_price: 1
+
+two:
+  chef_id: 1
+  cuisine_id: 1
+  name: MyString
+  ingredients: MyString
+  suggested_price: 1
