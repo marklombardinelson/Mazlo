@@ -40,3 +40,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # File uploading
 gem "refile", github: "gstark/refile", branch: "updates-for-rails-5", require: "refile/rails"
 gem "refile-postgres"
+
+gem "knock", "~> 2.0"
+gem "http"
