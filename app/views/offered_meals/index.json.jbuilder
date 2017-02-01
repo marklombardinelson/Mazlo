@@ -7,13 +7,12 @@ json.array! @offered_meals do |offered_meal|
     json.url attachment_url(photo, :image)
   end
 
-  json.rating do |rating|
-    # ....
+  json.ratings offered_meal.ratings do |rating|
+    json.stars offered_meal.meal_selections.ratings
   end
 
   json.meal do |meal|
-    # offered_meal.meal.ingredients
-    # ....
+    json.ingredients offered_meal.meal.ingredients
   end
 
   json.event do |event|

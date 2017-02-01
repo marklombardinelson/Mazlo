@@ -37,13 +37,13 @@ class OfferedMealsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_offered_meal
-      @offered_meal = OfferedMeal.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_offered_meal
+    @offered_meal = OfferedMeal.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def offered_meal_params
-      params.fetch(:offered_meal, {})
-    end
+  # Only allow a trusted parameter "white list" through.
+  def offered_meal_params
+    params.fetch(:offered_meal, {})
+  end
 end
