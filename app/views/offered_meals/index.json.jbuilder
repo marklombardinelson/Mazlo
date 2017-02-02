@@ -4,7 +4,7 @@ json.array! @offered_meals do |offered_meal|
   json.customizations offered_meal.customizations
 
   json.photos offered_meal.photos do |photo|
-    json.url attachment_url(photo, :image)
+    json.url attachment_url(photo, :image, host: URI(%{#{request.protocol}#{request.host}:#{request.port}}))
   end
 
   json.ratings offered_meal.ratings do |rating|
