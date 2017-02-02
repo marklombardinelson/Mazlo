@@ -1,4 +1,7 @@
 class OfferedMealsController < ApplicationController
+  # Example of setting security only for certain actions
+  #  before_action :authenticate_user, only: [:create, :update, :destroy]
+
   before_action :set_offered_meal, only: [:show, :update, :destroy]
 
   # GET /offered_meals

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :offered_meals
+  resources :events, except: [:index]
 
   get 'user/update'
 
