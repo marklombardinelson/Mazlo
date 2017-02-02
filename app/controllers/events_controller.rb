@@ -36,8 +36,8 @@ class EventsController < ApplicationController
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.fetch(:event, {:address, :held_at})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.fetch(:event, [:address, :held_at])
+  end
 end
