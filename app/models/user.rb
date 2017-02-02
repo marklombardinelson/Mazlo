@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def update_profile
-    profile = HTTP.post('https://campfire.auth0.com/tokeninfo', json: {
+    profile = HTTP.post('https://mazlo.auth0.com/tokeninfo', json: {
      id_token: token
     }).parse
 
@@ -27,5 +27,7 @@ class User < ApplicationRecord
     self.profile = profile
 
     save
+  rescue HTTP::Error => ex
+    Rails.logger.info "For User #{self.inspect} cannot update auth0 profile because of #{ex}"
   end
 end
