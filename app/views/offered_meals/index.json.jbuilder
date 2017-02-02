@@ -8,7 +8,7 @@ json.array! @offered_meals do |offered_meal|
   end
 
   json.ratings offered_meal.ratings do |rating|
-    json.stars offered_meal.meal_selections.ratings
+    json.stars offered_meal.ratings
   end
 
   json.meal do |meal|
