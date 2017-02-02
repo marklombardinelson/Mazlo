@@ -43,12 +43,12 @@ offered_meal7 = OfferedMeal.create!(price: 800, meal: meal7, event: event5, cust
 offered_meal8 = OfferedMeal.create!(price: 800, meal: meal8, event: event5, customizations: "Things")
 offered_meal9 = OfferedMeal.create!(price: 800, meal: meal3, event: old_event_9, customizations: "Old Things")
 
-meal_selection1 = MealSelection.create!(user: mark, offered_meal_id: offered_meal8)
-meal_selection2 = MealSelection.create!(user: bob, offered_meal_id: offered_meal7)
-meal_selection3 = MealSelection.create!(user: mark, offered_meal_id: offered_meal6)
-meal_selection4 = MealSelection.create!(user: jane, offered_meal_id: offered_meal5)
-meal_selection5 = MealSelection.create!(user: jane, offered_meal_id: offered_meal3)
-meal_selection6 = MealSelection.create!(user: mark, offered_meal_id: offered_meal4)
+meal_selection1 = MealSelection.create!(user: mark, offered_meal: offered_meal8)
+meal_selection2 = MealSelection.create!(user: bob, offered_meal: offered_meal7)
+meal_selection3 = MealSelection.create!(user: mark, offered_meal: offered_meal6)
+meal_selection4 = MealSelection.create!(user: jane, offered_meal: offered_meal5)
+meal_selection5 = MealSelection.create!(user: jane, offered_meal: offered_meal3)
+meal_selection6 = MealSelection.create!(user: mark, offered_meal: offered_meal4)
 
 photo1 = Photo.create!(offered_meal: offered_meal8, image: File.open(Rails.root.join("db/seeds/meal8-image.jpg")))
 photo2 = Photo.create!(offered_meal: offered_meal7, image: File.open(Rails.root.join("db/seeds/meal7-image.jpg")))
@@ -74,15 +74,6 @@ category5 = Category.create!(name: "Spanish")
 category6 = Category.create!(name: "Italian")
 category7 = Category.create!(name: "Dinner")
 category8 = Category.create!(name: "Greek")
-
-cuisine1 = Cuisine.create!(category_id: category8, meal_id: meal8)
-cuisine2 = Cuisine.create!(category_id: category7, meal_id: meal7)
-cuisine3 = Cuisine.create!(category_id: category7, meal_id: meal6)
-cuisine4 = Cuisine.create!(category_id: category5, meal_id: meal5)
-cuisine5 = Cuisine.create!(category_id: category4, meal_id: meal4)
-cuisine6 = Cuisine.create!(category_id: category3, meal_id: meal3)
-cuisine7 = Cuisine.create!(category_id: category2, meal_id: meal3)
-cuisine8 = Cuisine.create!(category_id: category4, meal_id: meal5)
 
 # offered_meals = OfferedMeal.create!(name: "Classic Manhattan Clam Chowder",
 #                 price: 5,
