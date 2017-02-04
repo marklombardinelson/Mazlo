@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :events
   resources :offered_meals
   resources :events, except: [:index]
 

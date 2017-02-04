@@ -1,3 +1,10 @@
+
+
+# Created When Controller Created
+# json.partial! "users/user", user: @user
+
+# Taken From Other json
+
 # json.array! @offered_meals do |offered_meal|
 #   json.id             offered_meal.id
 #   json.price          offered_meal.price
