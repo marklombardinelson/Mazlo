@@ -6,12 +6,16 @@ class OfferedMealsController < ApplicationController
 
   # GET /offered_meals
   def index
-    @offered_meals = OfferedMeal.all.joins(:event).merge(Event.future)
-  end
+    # Now needs a "address" param to work
+    @offered_meals = OfferedMeal.all.joins(:event).merge(Event.future) # .near(params[:address])
+
+    # # Now needs a "lat/lng" param to work
+    # @offered_meals = OfferedMeal.all.joins(:event).merge(Event.future.near([params[:latitude], params[:longitude]]))
+end
 
   # GET /offered_meals/1
   def show
-    render json: @offered_meal
+    # render json: @offered_meal
   end
 
   # POST /offered_meals
