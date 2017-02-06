@@ -16,6 +16,7 @@ json.meal do |meal|
 end
 
 json.event do |event|
+  json.id @offered_meal.event.id
   json.held_at @offered_meal.event.held_at
   json.address @offered_meal.event.address
   json.chef do |chef|
