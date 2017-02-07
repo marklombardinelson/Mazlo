@@ -3,8 +3,17 @@ json.array! @offered_meals do |offered_meal|
   json.price          offered_meal.price
   json.customizations offered_meal.customizations
 
-  json.photos offered_meal.photos do |photo|
-    json.url attachment_url(photo, :image, host: URI(%{#{request.protocol}#{request.host}:#{request.port}}))
+
+
+  if offered_meal.photos.any?
+    json.photos offered_meal.photos do |photo|
+      json.image_id photo.image_id
+      json.url attachment_url(photo, :image, host: URI(%{#{request.protocol}#{request.host}:#{request.port}}))
+    end
+  else
+    json.photos do
+      json.url image_url("default_meal.jpg")
+    end
   end
 
   json.ratings offered_meal.ratings do |rating|

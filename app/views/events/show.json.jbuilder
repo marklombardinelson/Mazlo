@@ -17,8 +17,14 @@ json.offered_meals @event.offered_meals do |offered_meal|
     end
   end
 
-  json.photos offered_meal.photos do |photo|
-    json.image_id photo.image_id
-    json.url attachment_url(photo, :image, host: URI(%{#{request.protocol}#{request.host}:#{request.port}}))
+  if offered_meal.photos.any?
+    json.photos offered_meal.photos do |photo|
+      json.image_id photo.image_id
+      json.url attachment_url(photo, :image, host: URI(%{#{request.protocol}#{request.host}:#{request.port}}))
+    end
+  else
+    json.photos do
+      json.url image_url("default_meal.jpg")
+    end
   end
 end

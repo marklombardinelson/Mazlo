@@ -57,7 +57,7 @@ photo4 = Photo.create!(offered_meal: offered_meal5, image: File.open(Rails.root.
 photo5 = Photo.create!(offered_meal: offered_meal4, image: File.open(Rails.root.join("db/seeds/meal4-image.jpg")))
 photo6 = Photo.create!(offered_meal: offered_meal3, image: File.open(Rails.root.join("db/seeds/meal3-image.jpg")))
 photo7 = Photo.create!(offered_meal: offered_meal2, image: File.open(Rails.root.join("db/seeds/meal2-image.jpg")))
-photo8 = Photo.create!(offered_meal: offered_meal1, image: File.open(Rails.root.join("db/seeds/meal1-image.jpg")))
+# photo8 = Photo.create!(offered_meal: offered_meal1, image: File.open(Rails.root.join("db/seeds/meal1-image.jpg")))
 
 rating1 = Rating.create!(meal_selection: meal_selection6, stars: 4)
 rating2 = Rating.create!(meal_selection: meal_selection5, stars: 5)
