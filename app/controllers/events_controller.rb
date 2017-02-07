@@ -25,13 +25,19 @@ class EventsController < ApplicationController
       suggested_price: event_params[:price]
     })
 
-    @event.offered_meals.new({
+    offer = @event.offered_meals.new({
       meal: meal,
       price: event_params[:price]
     })
 
+    offer.photos.new({
+      image: event_params[:image]
+    })
+
     if @event.save
-      render :show, status: :created, location: @event
+      referer = URI(request.referer)
+      # render :show, status: :created, location: @event
+      redirect_to URI(%{http://#{referer.host}:#{referer.port}/TopPicks}).to_s
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -58,6 +64,6 @@ class EventsController < ApplicationController
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.fetch(:event, [:address, :held_at, :maximum_guest_count])
+    params.fetch(:event, [:address, :held_at, :maximum_guest_count, :image, :time, :price, :dishname, :ingredients, :address, :seats])
   end
 end
