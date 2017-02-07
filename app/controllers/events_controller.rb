@@ -19,6 +19,7 @@ class EventsController < ApplicationController
     })
 
     meal = @event.meals.new({
+      chef_user: current_user,
       name: event_params[:dishname],
       ingredients: event_params[:ingredients]
     })
