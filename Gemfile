@@ -43,3 +43,6 @@ gem "refile-postgres"
 
 gem "knock", "~> 2.0"
 gem "http"
+
+# GeoCoding
+gem "geocoder"

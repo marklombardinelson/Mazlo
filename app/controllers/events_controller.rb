@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user, only: [:create, :update, :destroy]
+
   # GET /events/1
   # GET /events/1.json
   def show
@@ -8,7 +10,23 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    event_params = params[:event]
+
+    @event = current_user.events.new({
+      held_at: Date.parse(event_params[:time]),
+      maximum_guest_count: event_params[:seats],
+      address: event_params[:address]
+    })
+
+    meal = @event.meals.new({
+      name: event_params[:dishname],
+      ingredients: event_params[:ingredients]
+    })
+
+    @event.offered_meals.new({
+      meal: meal,
+      suggested_price: event_params[:price]
+    })
 
     if @event.save
       render :show, status: :created, location: @event
@@ -38,6 +56,6 @@ class EventsController < ApplicationController
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.fetch(:event, [:address, :held_at])
+    params.fetch(:event, [:address, :held_at, :maximum_guest_count])
   end
 end
