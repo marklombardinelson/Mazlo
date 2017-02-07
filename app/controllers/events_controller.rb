@@ -18,7 +18,8 @@ class EventsController < ApplicationController
       address: event_params[:address]
     })
 
-    meal = @event.meals.new({
+    meal = Meal.new({
+      event: @event,
       chef_user: current_user,
       name: event_params[:dishname],
       ingredients: event_params[:ingredients],

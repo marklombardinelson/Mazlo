@@ -74,18 +74,3 @@ category5 = Category.create!(name: "Spanish")
 category6 = Category.create!(name: "Italian")
 category7 = Category.create!(name: "Dinner")
 category8 = Category.create!(name: "Greek")
-
-# offered_meals = OfferedMeal.create!(name: "Classic Manhattan Clam Chowder",
-#                 price: 5,
-#                 description: "This chowder is a great change of pace from the creamy New England version. With its base of stock and tomatoes, rather than roux and cream, it's lighter and a bit healthier. It's still a chowder, though, because it has bacon and potatoes.",
-#                 user: bob,
-#
-# offered_meals = OfferedMeal.create!(name: "Jamaican Goat Curry",
-#                 price: 10,
-#                 user: jane,
-#                 description: "Slow cooked goat stew Jamaican-style. This stew can be made on the stove-top or in the crockpot. Times reflect stove-top cooking. This can be made with lamb or beef in lieu of goat, as availability requires.",
-#
-# offered_meals = OfferedMeal.create!(name: "Peach Cobbler easy",
-#                 price: 12,
-#                 user: jane,
-#                 description: "Delicious peach cobbler, so easy to make, so wonderful to eat!",
