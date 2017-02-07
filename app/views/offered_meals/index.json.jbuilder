@@ -3,8 +3,6 @@ json.array! @offered_meals do |offered_meal|
   json.price          offered_meal.price
   json.customizations offered_meal.customizations
 
-
-
   if offered_meal.photos.any?
     json.photos offered_meal.photos do |photo|
       json.image_id photo.image_id
@@ -12,7 +10,9 @@ json.array! @offered_meals do |offered_meal|
     end
   else
     json.photos do
-      json.url image_url("default_meal.jpg")
+      json.array! [image_url("default_meal.jpg")] do |default|
+        json.url default
+      end
     end
   end
 
