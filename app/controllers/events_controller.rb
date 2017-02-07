@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   def create
     event_params = params[:event]
 
-    @event = current_user.events.new({
+    @event = current_user.chef_events.new({
       held_at: Date.parse(event_params[:time]),
       maximum_guest_count: event_params[:seats],
       address: event_params[:address]
