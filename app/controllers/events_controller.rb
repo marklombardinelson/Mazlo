@@ -21,12 +21,13 @@ class EventsController < ApplicationController
     meal = @event.meals.new({
       chef_user: current_user,
       name: event_params[:dishname],
-      ingredients: event_params[:ingredients]
+      ingredients: event_params[:ingredients],
+      suggested_price: event_params[:price]
     })
 
     @event.offered_meals.new({
       meal: meal,
-      suggested_price: event_params[:price]
+      price: event_params[:price]
     })
 
     if @event.save
