@@ -1,24 +1,42 @@
-# README
+Tryout the app: http://mazlo.cmhfl92.surge.sh/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Stack
+Front-End (Javascript, React, CSS, HTML) - Done by Christa Hegedus https://github.com/cmhfl92
 
-Things you may want to cover:
+Back-End (Ruby, Rails) - Done by https://github.com/marklombardinelson
 
-* Ruby version
+# Purpose
+Creating a social dining platform to turn every home into a restaurant.
 
-* System dependencies
+# Features
+- User should be able to sign up with Facebook or Google.
+- User should be able to post a meal, rate meals, find meals nearby, and register for an event where the meal is being served.
+- The meals will be dynamically listed for easier navigation.
 
-* Configuration
+# How
 
-* Database creation
+- Controllers
+  - Events
+  - Offered Meals
+  - Users
 
-* Database initialization
+- Models
+  - Category
+  - Cuisine
+  - Event
+  - Meal Selection
+  - Meal
+  - Offered Meal
+  - Photo
+  - Rating
+  - User
 
-* How to run the test suite
+- Gems/APIs
+  - knock
+  - jbuilder
+  - refile
+  - geocoder
 
-* Services (job queues, cache servers, search engines, etc.)
+#Result
 
-* Deployment instructions
-
-* ...
+![screenshot](https://github.com/marklombardinelson/Mazlo/blob/master/doc/Mazlo.gif)
