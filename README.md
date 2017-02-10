@@ -3,7 +3,7 @@ Tryout the app: http://mazlo.cmhfl92.surge.sh/
 # Stack
 Front-End (Javascript, React, CSS, HTML) - Done by Christa Hegedus https://github.com/cmhfl92
 
-Back-End (Ruby, Rails) - Done by https://github.com/marklombardinelson
+Back-End (Ruby, Rails, JSON) - Done by https://github.com/marklombardinelson
 
 # Purpose
 Creating a social dining platform to turn every home into a restaurant.
